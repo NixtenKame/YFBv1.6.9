@@ -1,0 +1,159 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4, 1fr)); /* Auto-adjust to fit available space */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #005999;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Limit number of items per row on larger screens */
+@media (min-width: 1366px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row on desktop */
+    }
+}
+
+/* Gallery Item */
+.gallery-item {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Add space for long tags under images */
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    background: #f0f0f0;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+}
+
+.pagination a:hover {
+    background: #ddd;
+}
+
+/* Pagination Dots */
+.pagination .dots {
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    color: #666;
+    pointer-events: none; /* Make dots unclickable */
+}
+
+/* Previous and Next Buttons */
+.pagination a.previous,
+.pagination a.next {
+    font-weight: bold;
+}
+
+.button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
